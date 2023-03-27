@@ -1,0 +1,12 @@
+spring:
+  config:
+    import: configserver:http://localhost:${config.port:8888}
+  application:
+    name: rosa
+  cloud:
+    bootstrap:
+      enabled: true
+    config:
+      uri: http://localhost:${config.port:8888}
+  profiles:
+    active: development
